@@ -28,8 +28,20 @@ namespace ProjectFortuneTeller
 
             Console.Write("\n" + "Please enter your age in years: ");
             age = int.Parse(Console.ReadLine());
-            Console.WriteLine("\n" + age);
-            
+            Console.WriteLine("\n" + age); // testing variable
+
+            Console.Write("\n" + "Please enter your birth month: ");
+            birthMonth = int.Parse(Console.ReadLine());
+            Console.WriteLine("\n" + birthMonth); // testing variable
+
+            Console.Write("\n" + "Please enter your favorite ROYGBIV color: ");
+            roygbiv = Console.ReadLine();
+            Console.WriteLine("\n" + roygbiv);
+
+            Console.Write("\n" + "Please enter your number of sibling: ");
+            numSiblings = int.Parse(Console.ReadLine());
+            Console.WriteLine("\n" + numSiblings);
+
             Console.ReadKey();
         }
     }
