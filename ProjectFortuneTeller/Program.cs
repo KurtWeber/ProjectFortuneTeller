@@ -21,7 +21,7 @@ namespace ProjectFortuneTeller
             //Initialize misc variables
             int retYrs;
             string vacHome;
-            string vehicle;
+            string vehicle = "";
             string moneyBank;
 
             //User input
@@ -53,8 +53,7 @@ namespace ProjectFortuneTeller
             {
                 retYrs = 20; //Even age
             }
-            Console.WriteLine("\n" + retYrs);  //Check age
-
+          
             // Set vacation home
             if (numSiblings == 0)
             {
@@ -62,7 +61,7 @@ namespace ProjectFortuneTeller
             }
             else if (numSiblings == 1)
             {
-                vacHome = "Florida Keys";
+                vacHome = "Florida";
             }
             else if (numSiblings == 2)
             {
@@ -97,7 +96,7 @@ namespace ProjectFortuneTeller
                     vehicle = "golf cart";
                     break;
                 case "blue":
-                    vehicle = "broomstick";
+                    vehicle = "Buick";
                     break;
                 case "indigo":
                     vehicle = "Infinity Q70";
@@ -107,9 +106,26 @@ namespace ProjectFortuneTeller
                     break;
             }
             // Set Money in the bank
+            if (birthMonth >= 1 && birthMonth <= 4)
+            {
+                moneyBank = "500,000.00";
+            }
+            else if (birthMonth >= 5 && birthMonth <=8)
+            {
+                moneyBank = "250,000.00";
+            }        
+            else if (birthMonth >= 9 && birthMonth <=12)
+            {
+                moneyBank = "1,000,000.00";
+            }
+            else
+            {
+                moneyBank = "0.00";
+            }
 
-
-        
+            // Printout fortune
+            Console.Write("\n" + "{0} {1} will retire in {2} years with ${3} in the bank, a vacation home in {4} and a {5}.",firstName,lastName,retYrs,moneyBank,vacHome,vehicle);
+         
             Console.ReadKey();
         }
     }
