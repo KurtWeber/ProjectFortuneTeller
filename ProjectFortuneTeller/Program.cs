@@ -21,13 +21,14 @@ namespace ProjectFortuneTeller
             //Initialize misc variables
             int retYrs;
             string vacHome;
-            string vehicle = "";
+            string vehicle = "";  // Had to declare value for switch case
             string moneyBank;
 
             //User input
             Console.Write("Welcome to my fortune teller App.  With just a few details, I can tell you your furture." + "\n" + "\n");
             Console.Write("Please enter your first name: ");
             firstName = Console.ReadLine();
+
 
             Console.Write("\n" + "Please enter your last name: ");
             lastName = Console.ReadLine();
@@ -38,8 +39,21 @@ namespace ProjectFortuneTeller
             Console.Write("\n" + "Please enter your birth month: ");
             birthMonth = int.Parse(Console.ReadLine());
 
-            Console.Write("\n" + "Please enter your favorite ROYGBIV color: ");
+            Console.Write("\n" + "Please enter your favorite ROYGBIV color: " + "\n" + "Type \"Help\" if you need the colors defined ");
             roygbiv = Console.ReadLine();
+            if (roygbiv.ToLower() == "help")
+            {
+                Console.WriteLine("\n" + "Here are the ROYGBIV colors." + "\n");
+                Console.WriteLine("R - Red");
+                Console.WriteLine("O - Orange");
+                Console.WriteLine("Y - Yellow");
+                Console.WriteLine("G - Green");
+                Console.WriteLine("B - Blue");
+                Console.WriteLine("I - Indigo");
+                Console.WriteLine("V - Violet");
+                Console.Write("\n" + "Please enter your favorite ROYGBIV color: ");
+                roygbiv = Console.ReadLine();
+            }
 
             Console.Write("\n" + "Please enter your number of sibling: ");
             numSiblings = int.Parse(Console.ReadLine());
@@ -53,7 +67,7 @@ namespace ProjectFortuneTeller
             {
                 retYrs = 20; //Even age
             }
-          
+
             // Set vacation home
             if (numSiblings == 0)
             {
@@ -110,11 +124,11 @@ namespace ProjectFortuneTeller
             {
                 moneyBank = "500,000.00";
             }
-            else if (birthMonth >= 5 && birthMonth <=8)
+            else if (birthMonth >= 5 && birthMonth <= 8)
             {
                 moneyBank = "250,000.00";
-            }        
-            else if (birthMonth >= 9 && birthMonth <=12)
+            }
+            else if (birthMonth >= 9 && birthMonth <= 12)
             {
                 moneyBank = "1,000,000.00";
             }
@@ -124,8 +138,7 @@ namespace ProjectFortuneTeller
             }
 
             // Printout fortune
-            Console.Write("\n" + "{0} {1} will retire in {2} years with ${3} in the bank, a vacation home in {4} and a {5}.",firstName,lastName,retYrs,moneyBank,vacHome,vehicle);
-         
+            Console.Write("\n" + "{0} {1} will retire in {2} years with ${3} in the bank, " + "\n" + "a vacation home in {4} and a {5}.", firstName, lastName, retYrs, moneyBank, vacHome, vehicle);
             Console.ReadKey();
         }
     }
