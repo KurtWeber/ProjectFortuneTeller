@@ -83,17 +83,13 @@ namespace ProjectFortuneTeller
             }
             else if (numSiblings == 3)
             {
-                vacHome = "Martha's Vineyard";
-            }
-            else if (numSiblings > 3)
-            {
                 vacHome = "Paris";
             }
             else
             {
                 vacHome = "parent's basement";
             }
-
+          
             // Set vehicle type
             switch (roygbiv = roygbiv.ToLower())
             {
