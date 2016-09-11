@@ -25,37 +25,45 @@ namespace ProjectFortuneTeller
             string moneyBank;
 
             //User input
-            Console.Write("Welcome to my fortune teller App.  With just a few details, I can tell you your furture." + "\n" + "\n");
+            Console.Write("Welcome to my fortune teller App.  With just a few details, I can tell you your furture.\n\n");
             Console.Write("Please enter your first name: ");
             firstName = Console.ReadLine();
 
 
-            Console.Write("\n" + "Please enter your last name: ");
+            Console.Write("\nPlease enter your last name: ");
             lastName = Console.ReadLine();
 
-            Console.Write("\n" + "Please enter your age in years: ");
+            Console.Write("\nPlease enter your age in years: ");
             age = int.Parse(Console.ReadLine());
 
-            Console.Write("\n" + "Please enter your birth month: ");
+            Console.Write("\nPlease enter your birth month: ");
             birthMonth = int.Parse(Console.ReadLine());
 
-            Console.Write("\n" + "Please enter your favorite ROYGBIV color: " + "\n" + "Type \"Help\" if you need the colors defined ");
-            roygbiv = Console.ReadLine();
-            if (roygbiv.ToLower() == "help")
+            do
             {
-                Console.WriteLine("\n" + "Here are the ROYGBIV colors." + "\n");
-                Console.WriteLine("R - Red");
-                Console.WriteLine("O - Orange");
-                Console.WriteLine("Y - Yellow");
-                Console.WriteLine("G - Green");
-                Console.WriteLine("B - Blue");
-                Console.WriteLine("I - Indigo");
-                Console.WriteLine("V - Violet");
-                Console.Write("\n" + "Please enter your favorite ROYGBIV color: ");
+                Console.Write("\nPlease enter your favorite ROYGBIV color: \nType \"Help\" if you need the colors defined ");
                 roygbiv = Console.ReadLine();
-            }
+                if (roygbiv.ToLower() == "help")
+                {
+                    Console.WriteLine("\nHere is the ROYGBIV color palette: \n");
+                    Console.WriteLine("R - Red");
+                    Console.WriteLine("O - Orange");
+                    Console.WriteLine("Y - Yellow");
+                    Console.WriteLine("G - Green");
+                    Console.WriteLine("B - Blue");
+                    Console.WriteLine("I - Indigo");
+                    Console.WriteLine("V - Violet");
+                    //Console.Write("\n" + "Not part of the ROYGBIV color palette.  Please try again: ");
+                    //roygbiv = Console.ReadLine();
+                }
+                if (roygbiv.ToLower() != "help")
+                    if (roygbiv.ToLower() != "red" && roygbiv.ToLower() != "orange" && roygbiv.ToLower() != "yellow" && roygbiv.ToLower() != "green" && roygbiv.ToLower() != "blue" && roygbiv.ToLower() != "indigo" && roygbiv.ToLower() != "violet")
+                    {
+                        Console.WriteLine("\nPlease try again.");
+                    }
+            } while(roygbiv.ToLower() != "red" && roygbiv.ToLower() != "orange" && roygbiv.ToLower() != "yellow" && roygbiv.ToLower() != "green" && roygbiv.ToLower() != "blue" && roygbiv.ToLower() != "indigo" && roygbiv.ToLower() != "violet");
 
-            Console.Write("\n" + "Please enter your number of sibling: ");
+            Console.Write("\nPlease enter your number of sibling: ");
             numSiblings = int.Parse(Console.ReadLine());
 
             // Age odd/even check
@@ -134,7 +142,7 @@ namespace ProjectFortuneTeller
             }
 
             // Printout fortune
-            Console.Write("\n" + "{0} {1} will retire in {2} years with ${3} in the bank, " + "\n" + "a vacation home in {4} and a {5}.", firstName, lastName, retYrs, moneyBank, vacHome, vehicle);
+            Console.Write("\n{0} {1} will retire in {2} years with ${3} in the bank, \na vacation home in {4} and a {5}.", firstName, lastName, retYrs, moneyBank, vacHome, vehicle);
             Console.ReadKey();
         }
     }
