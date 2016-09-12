@@ -23,6 +23,8 @@ namespace ProjectFortuneTeller
             string vacHome;
             string vehicle = "";  // Had to declare value for switch case
             string moneyBank;
+            double think;
+            int pause;
 
             //User input
             Console.Write("Welcome to my fortune teller App.  With just a few details, I can tell you your furture.\n\n");
@@ -57,14 +59,17 @@ namespace ProjectFortuneTeller
                     //roygbiv = Console.ReadLine();
                 }
                 if (roygbiv.ToLower() != "help")
+                {
                     if (roygbiv.ToLower() != "red" && roygbiv.ToLower() != "orange" && roygbiv.ToLower() != "yellow" && roygbiv.ToLower() != "green" && roygbiv.ToLower() != "blue" && roygbiv.ToLower() != "indigo" && roygbiv.ToLower() != "violet")
                     {
                         Console.WriteLine("\nPlease try again.");
                     }
+                }
             } while(roygbiv.ToLower() != "red" && roygbiv.ToLower() != "orange" && roygbiv.ToLower() != "yellow" && roygbiv.ToLower() != "green" && roygbiv.ToLower() != "blue" && roygbiv.ToLower() != "indigo" && roygbiv.ToLower() != "violet");
 
             Console.Write("\nPlease enter your number of sibling: ");
             numSiblings = int.Parse(Console.ReadLine());
+            Console.WriteLine();
 
             // Age odd/even check
             if (age / 2 != 0)
@@ -141,8 +146,19 @@ namespace ProjectFortuneTeller
                 moneyBank = "0.00";
             }
 
+            // Thinking
+            Console.Write("Thinking: ");
+            for (think = 0; think <= 50; think++)
+            {
+                {                    
+                    Console.Write("*");
+                }
+                for (pause = 0; pause <= 100000000; pause++)
+                {
+                }
+            }
             // Printout fortune
-            Console.Write("\n{0} {1} will retire in {2} years with ${3} in the bank, \na vacation home in {4} and a {5}.", firstName, lastName, retYrs, moneyBank, vacHome, vehicle);
+            Console.Write("\n\n{0} {1} will retire in {2} years with ${3} in the bank, \na vacation home in {4} and a {5}.", firstName, lastName, retYrs, moneyBank, vacHome, vehicle);
             Console.ReadKey();
         }
     }
