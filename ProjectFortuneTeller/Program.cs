@@ -72,7 +72,7 @@ namespace ProjectFortuneTeller
             Console.WriteLine();
 
             // Age odd/even check
-            if (age / 2 != 0)
+            if (age % 2 != 0)
             {
                 retYrs = 35; //Odd age
             }
